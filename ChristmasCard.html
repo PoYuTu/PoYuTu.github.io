@@ -13,16 +13,12 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #d3d3d3;
+            background-color: #d3d3d3; /* Changed to light gray */
             overflow: hidden;
         }
         #screen1 {
             display: block;
             padding: 20px;
-        }
-        #screen1 img {
-            width: 60%;
-            max-width: 600px;
         }
         #screen2 {
             display: none;
@@ -36,6 +32,7 @@
             align-items: center;
             justify-content: flex-start;
             gap: 20px;
+            flex-wrap: wrap;
         }
         #screen2 img {
             width: 60%;
@@ -50,6 +47,7 @@
             font-size: 1.5em;
             white-space: pre-line;
             margin-left: 200px;
+            flex: 1;
         }
         #screen2 .footer-message {
             font-size: 5em;
@@ -78,6 +76,21 @@
                 transform: translateY(100vh);
             }
         }
+        @media (max-width: 768px) {
+            #screen2 .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            #screen2 img {
+                margin-left: 0;
+                width: 80%;
+            }
+            #screen2 .message-container {
+                margin-left: 0;
+                width: 90%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -86,7 +99,6 @@
         <input type="text" id="nameInput" placeholder="輸入你的名字">
         <button onclick="checkName()">確認</button>
         <p id="errorMessage" class="error"></p>
-	<img src="https://drive.google.com/thumbnail?id=1ykW-jt-ypAFdDza8qhBRxe5482BbF53n" alt="蛤">
     </div>
 
     <div id="screen2">
